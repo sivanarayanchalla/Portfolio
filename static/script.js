@@ -1,56 +1,42 @@
-// Sidebar Hover Expand
-const sidebar = document.querySelector(".sidebar");
-
-sidebar.addEventListener("mouseenter", () => {
-    sidebar.style.width = "200px";
-    document.querySelectorAll(".sidebar ul li a").forEach(link => {
-        link.style.justifyContent = "flex-start";
+document.addEventListener("DOMContentLoaded", function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll("nav a, #mobile-menu a").forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const section = document.querySelector(this.getAttribute("href"));
+            section.scrollIntoView({ behavior: "smooth" });
+        });
     });
-});
 
-sidebar.addEventListener("mouseleave", () => {
-    sidebar.style.width = "70px";
-    document.querySelectorAll(".sidebar ul li a").forEach(link => {
-        link.style.justifyContent = "center";
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
     });
-});
 
-// Smooth Scrolling for Sidebar Links
-document.querySelectorAll('.sidebar ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(event) {
-        event.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    // Back to top button
+    const backToTop = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.remove("hidden");
+        } else {
+            backToTop.classList.add("hidden");
+        }
     });
-});
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-// Dark Mode Toggle
-const darkModeToggle = document.getElementById("darkModeToggle");
-darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    
-    // Save user preference in local storage
-    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-});
-
-// Load Dark Mode Preference
-if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
-}
-
-// Contact Form Submission (Optional)
-document.querySelector("form")?.addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Message Sent Successfully! 🚀");
-    this.reset();  // Clear form fields after submission
-});
-
-// Scroll Indicator Effect (Optional)
-window.addEventListener("scroll", () => {
-    let scrollPosition = window.scrollY;
-    let windowHeight = window.innerHeight;
-    let fullHeight = document.body.clientHeight;
-    
-    let scrollPercentage = (scrollPosition / (fullHeight - windowHeight)) * 100;
-    document.getElementById("scrollIndicator").style.width = scrollPercentage + "%";
+    // Typing Animation
+    const text = "Welcome to My Portfolio";
+    let i = 0;
+    function typingEffect() {
+        document.querySelector(".animate-typing").innerHTML = text.slice(0, i);
+        i++;
+        if (i <= text.length) {
+            setTimeout(typingEffect, 100);
+        }
+    }
+    typingEffect();
 });

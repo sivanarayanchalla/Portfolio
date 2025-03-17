@@ -4,53 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    <script defer src="static/js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-800 text-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold">🚀 My Portfolio</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-yellow-500">Home</a></li>
+                <li><a href="#about" class="hover:text-yellow-500">About</a></li>
+                <li><a href="#projects" class="hover:text-yellow-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
+            </ul>
+            <button id="menu-btn" class="md:hidden">☰</button>
+        </div>
+    </nav>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="logo">MyPortfolio</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="darkModeToggle">🌙</button>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full bg-gray-800 text-white py-4 text-center">
+        <a href="#home" class="block py-2">Home</a>
+        <a href="#about" class="block py-2">About</a>
+        <a href="#projects" class="block py-2">Projects</a>
+        <a href="#contact" class="block py-2">Contact</a>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        
-        <section id="home" class="section">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Showcasing my work in data science and development.</p>
-        </section>
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('assets/hero-bg.jpg');">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold text-yellow-400">Welcome to My Portfolio</h1>
+            <p class="mt-4 text-lg">Explore my work and experience</p>
+            <a href="#projects" class="mt-6 inline-block bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg hover:bg-yellow-600 transition">Get Started</a>
+        </div>
+    </section>
 
-        <section id="about" class="section">
-            <h1>About Me</h1>
-            <p>Hi, I'm a data scientist passionate about AI, analytics, and visualization.</p>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 text-center">
+        <h2 class="text-3xl font-bold text-yellow-400">About Me</h2>
+        <p class="mt-4 max-w-2xl mx-auto">I'm a data scientist passionate about analytics, machine learning, and AI-driven insights.</p>
+    </section>
 
-        <section id="projects" class="section">
-            <h1>Projects</h1>
-            <div class="project-card">Project 1</div>
-            <div class="project-card">Project 2</div>
-        </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <h2 class="text-3xl font-bold text-yellow-400 text-center">Projects</h2>
+        <div class="container mx-auto grid md:grid-cols-2 gap-6 px-6">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-yellow-400">Expense Tracker API</h3>
+                <p>Built with Node.js and MongoDB.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-yellow-400">Gold Trade Analytics</h3>
+                <p>Predictive analysis using Python and Tableau.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="contact" class="section">
-            <h1>Contact Me</h1>
-            <form action="https://formspree.io/f/{your-form-id}" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 text-center">
+        <h2 class="text-3xl font-bold text-yellow-400">Contact</h2>
+        <form class="mt-6 max-w-lg mx-auto">
+            <input type="text" placeholder="Your Name" class="block w-full p-3 mb-4 bg-gray-700 rounded">
+            <input type="email" placeholder="Your Email" class="block w-full p-3 mb-4 bg-gray-700 rounded">
+            <textarea placeholder="Your Message" class="block w-full p-3 mb-4 bg-gray-700 rounded"></textarea>
+            <button type="submit" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg hover:bg-yellow-600 transition">Send</button>
+        </form>
+    </section>
 
-    </div>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-yellow-500 text-gray-900 p-3 rounded-full hidden">⬆</button>
 
+    <script src="script.js"></script>
 </body>
 </html>
