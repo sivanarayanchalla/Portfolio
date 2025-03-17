@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-800 text-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold">🚀 My Portfolio</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-yellow-500">Home</a></li>
+                <li><a href="#about" class="hover:text-yellow-500">About</a></li>
+                <li><a href="#projects" class="hover:text-yellow-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
+            </ul>
+            <button id="menu-btn" class="md:hidden">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full bg-gray-800 text-white py-4 text-center">
+        <a href="#home" class="block py-2">Home</a>
+        <a href="#about" class="block py-2">About</a>
+        <a href="#projects" class="block py-2">Projects</a>
+        <a href="#contact" class="block py-2">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('assets/hero-bg.jpg');">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold text-yellow-400">Welcome to My Portfolio</h1>
+            <p class="mt-4 text-lg">Explore my work and experience</p>
+            <a href="#projects" class="mt-6 inline-block bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg hover:bg-yellow-600 transition">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 text-center">
+        <h2 class="text-3xl font-bold text-yellow-400">About Me</h2>
+        <p class="mt-4 max-w-2xl mx-auto">I'm a data scientist passionate about analytics, machine learning, and AI-driven insights.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <h2 class="text-3xl font-bold text-yellow-400 text-center">Projects</h2>
+        <div class="container mx-auto grid md:grid-cols-2 gap-6 px-6">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-yellow-400">Expense Tracker API</h3>
+                <p>Built with Node.js and MongoDB.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-yellow-400">Gold Trade Analytics</h3>
+                <p>Predictive analysis using Python and Tableau.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 text-center">
+        <h2 class="text-3xl font-bold text-yellow-400">Contact</h2>
+        <form class="mt-6 max-w-lg mx-auto">
+            <input type="text" placeholder="Your Name" class="block w-full p-3 mb-4 bg-gray-700 rounded">
+            <input type="email" placeholder="Your Email" class="block w-full p-3 mb-4 bg-gray-700 rounded">
+            <textarea placeholder="Your Message" class="block w-full p-3 mb-4 bg-gray-700 rounded"></textarea>
+            <button type="submit" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg hover:bg-yellow-600 transition">Send</button>
+        </form>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-yellow-500 text-gray-900 p-3 rounded-full hidden">⬆</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

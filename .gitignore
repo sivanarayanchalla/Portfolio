@@ -1,0 +1,38 @@
+# Node.js dependencies (if using Node.js for backend)
+node_modules/
+npm-debug.log*
+yarn.lock
+package-lock.json
+
+# Python virtual environment (if using Flask/Django)
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development
+.env.production
+.DS_Store  # macOS hidden system file
+
+# VSCode settings
+.vscode/
+
+# Build and cache files
+dist/
+build/
+.cache/
+coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# GitHub and deployment-related files
+.git/
+.gitignore
