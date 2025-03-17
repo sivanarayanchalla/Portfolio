@@ -36,3 +36,16 @@ coverage/
 # GitHub and deployment-related files
 .git/
 .gitignore
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore node_modules if using npm
+node_modules/
+
+# Ignore GitHub Pages build folder
+/docs/
